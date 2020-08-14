@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : 17.12.2018, 8:50:12
+    Author     : martin
+*/
+
+
+body{
+    background-image: url('/public/images/bg.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+    overflow-x: hidden;
+}
+
+.main-container{
+    background-color: white;
+    padding-bottom: 50px;
+    border-radius: 0px 0px 20px 20px;
+}
+
+
+.right-side-panel{
+    border-left: 1px solid #1b183d;
+}
+
+.nav-item{
+    padding: 0px 5px 0px 5px;
+}
+.nav-link{
+    color: white !important;
+}
+.nav-link:hover{
+    text-decoration: underline;
+}
+
+[v-cloak] > * { display:none }
+
+br.cb { clear: both; }
+
+
+.ck-editor__editable_inline {
+    min-height: 500px;
+}
