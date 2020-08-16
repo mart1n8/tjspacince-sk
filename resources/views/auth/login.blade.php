@@ -38,7 +38,13 @@
                                 @endif
                             </div>
                         </div>
-                        <a href="{{ route('oauth.login', ['service'=>'facebook']) }}">FB</a>
+                        <div class="form-group row">
+                            <div class="col-md-6 offset-md-4">
+                                <a href="{{ route('oauth.login', ['service'=>'facebook']) }}">
+                                    <img src="{{ asset('images/facebook.png') }}" title="facebook login" style="width: 2em; margin:10px">
+                                </a>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">
