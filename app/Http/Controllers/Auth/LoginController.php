@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Laravel\Socialite\Facades\Socialite;
+use App\User;
 
 class LoginController extends Controller
 {
@@ -36,5 +38,34 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+
+    public function redirectToProvider($service)
+    {
+        return Socialite::driver($service)->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function handleProviderCallback($service)
+    {
+        $oauth_user = Socialite::driver($service)->user();
+
+        $service->createOrGetUser(Socialite::driver($service)->user());
+
+        /*
+        if(!$user = User::where('email', $oauth_user->email)->first()){
+            $user = User::create([
+                                    'email' => $oauth_user->email,
+                                    'name' => $oauth_user->name
+                                ]);
+        }
+        */
+        \Auth::login($user, true);
+        return redirect('/');
     }
 }

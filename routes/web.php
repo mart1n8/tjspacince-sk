@@ -41,6 +41,11 @@ Route::post('kontakt-admin', 'HomeController@contactAdminSave');
     Route::get('registracia', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('registracia', 'Auth\RegisterController@register');
 
+    //OAUTH LOGIN
+    Route::get('oauth/{service}', 'Auth\LoginController@redirectToProvider')->name('oauth.login');
+    Route::get('oauth/{service}/callback', 'Auth\LoginController@handleProviderCallback');
+//https://tjspacince.sk/oauth/facebook/callback
+
 //ADMIN
     Route::get('admin', 'Admin\AdminController@index')->name('admin.index')->middleware('checkRole:2');
     Route::get('admin/uzivatelia', 'Admin\UserController@index')->name('admin.user.index')->middleware('checkRole:2');
@@ -184,3 +189,7 @@ Route::post('kontakt-admin', 'HomeController@contactAdminSave');
 
 // STRANKY - POSLEDNA VOLI TOMU ZE AZ NAKONIEC IDEME HADAT SEM
     Route::get('{page_slug}', 'PageController@show')->name('page.show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
