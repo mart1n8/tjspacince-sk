@@ -38,7 +38,7 @@
                                 @endif
                             </div>
                         </div>
-
+                        <a href="{{ route('oauth.login', ['service'=>'facebook']) }}">FB</a>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="checkbox">

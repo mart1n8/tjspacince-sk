@@ -7,6 +7,9 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
 use App\User;
+use Illuminate\Support\Str;
+
+
 
 class LoginController extends Controller
 {
@@ -55,16 +58,15 @@ class LoginController extends Controller
     {
         $oauth_user = Socialite::driver($service)->user();
 
-        $service->createOrGetUser(Socialite::driver($service)->user());
-
-        /*
+ 
         if(!$user = User::where('email', $oauth_user->email)->first()){
             $user = User::create([
                                     'email' => $oauth_user->email,
-                                    'name' => $oauth_user->name
+                                    'name' => $oauth_user->name,
+                                    'password' => bcrypt(Str::random(40))
                                 ]);
         }
-        */
+
         \Auth::login($user, true);
         return redirect('/');
     }
