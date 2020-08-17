@@ -27,11 +27,11 @@ class TeamController extends Controller
         return back()->with('succeed', 'Tím bol pridaný.');
     }
     
-    public function edit($team_id){
+    public function edit(Request $request, $team_id){
         DB::table('teams')->where('id', $team_id)->update([
             'name'=>trim($request->input('name')), 
             'slug'=> Str::slug($request->input('name')),
-            'orderNum'=> Str::slug('orderNum')
+            'orderNum'=> $request->input('orderNum')
             ]);
         return back()->with('succeed', 'Tím bol upravený.');
     }

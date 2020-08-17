@@ -58,7 +58,7 @@
                 @method('POST')
             <div class="form-group">
                 <label for="name">Názov tímu:</label>
-                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : ''}}" name="name" id="name" placeholder="názov tímu" maxlength="9" value="{{ old('name') }}">
+                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : ''}}" name="name" id="name" placeholder="názov tímu" maxlength="20" value="{{ old('name') }}">
                 @if ($errors->has('name'))
                     <span class="invalid-feedback">
                     <strong>{{ $errors->first('name') }}</strong>

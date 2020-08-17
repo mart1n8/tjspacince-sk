@@ -189,7 +189,3 @@ Route::post('kontakt-admin', 'HomeController@contactAdminSave');
 
 // STRANKY - POSLEDNA VOLI TOMU ZE AZ NAKONIEC IDEME HADAT SEM
     Route::get('{page_slug}', 'PageController@show')->name('page.show');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

@@ -28,7 +28,7 @@
         @foreach ($matchs as $match)
           <tr>
             <th scope="row"><?= $match->id ?></th>
-            <td><a href="{{ route('matchs.show', ['match_slug'=>$match->slug]) }}"><?= $match->shortMatch ?></a>
+            <td><a href="{{ route('matchs.show', ['match'=>$match->slug]) }}"><?= $match->shortMatch ?></a>
             @if(!empty($match->fn_ID))
                 <span style="margin-left: 5px"><img src="{{ asset('images/fn_check.png') }}" alt="ID z FutbalNetu: {{ $match->fn_ID }}" title="ID z FutbalNetu: {{ $match->fn_ID }}" style="height:1em"/></span>
             @endif

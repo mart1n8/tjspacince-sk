@@ -2,7 +2,7 @@
 @section('title', 'hráči')
 @section('content')
 <div style='text-align: right'>
-    <a href="{{ route('matchs.show', ['slug'=>$match->slug]) }}">
+    <a href="{{ route('matchs.show', ['match'=>$match->slug]) }}">
         <img src="{{ asset('images/eye.png') }}" class="img-responsive" style="height: 32px;" title="góly">zobraziť zápas </a>
 </div>
 <div style="float: right">

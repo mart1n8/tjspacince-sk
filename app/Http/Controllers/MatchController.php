@@ -104,7 +104,7 @@ class MatchController extends Controller
         return redirect()->route('matchs.edit', ['match_id'=>$match->id])->with('succeed', 'Zápas bol upravený.');               
     }
     
-    public function setResult($match_id){
+    public function setResult(Request $request, $match_id){
         if(!$match=Match::find($match_id)){
             return back()->with('error', 'Zápas s týmto ID sa v databáze nenachádza.');
         }
