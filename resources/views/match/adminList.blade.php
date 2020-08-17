@@ -54,10 +54,8 @@
         @endforeach
         </tbody>
 </table>
-{{ ($matchs->count()==0) ? '<span style="color:red">Zatiaľ nie sú pridané žiadne zápasy.</span>' : '' }}
-<hr>
-<h4>Sumár:</h4>
-<span>Počet zápasov: {{ $matchs->count() }}</span>
+<?= ($matchs->count()==0) ? '<span style="color:red">Zatiaľ nie sú pridané žiadne zápasy.</span>' : '' ?>
+
 
 
 <script type="application/javascript">
