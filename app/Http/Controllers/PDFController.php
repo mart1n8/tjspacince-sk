@@ -72,15 +72,15 @@ class PDFController extends Controller
        $years= explode("/", $season->name);
 
         if($request->input('season_part')==2){      //jar
-            $matchs[0] = Match::where('team_id', $request->input('team1'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->get();
-            $matchs[1] = Match::where('team_id', $request->input('team2'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->get();
-            $matchs[2] = Match::where('team_id', $request->input('team3'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->get();
-            $matchs[3] = Match::where('team_id', $request->input('team4'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->get();
+            $matchs[0] = Match::where('team_id', $request->input('team1'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->orderBy('match_datetime', 'ASC')->get();
+            $matchs[1] = Match::where('team_id', $request->input('team2'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->orderBy('match_datetime', 'ASC')->get();
+            $matchs[2] = Match::where('team_id', $request->input('team3'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->orderBy('match_datetime', 'ASC')->get();
+            $matchs[3] = Match::where('team_id', $request->input('team4'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[1].'-01-01')->where('match_datetime', '<', $years[1].'-07-20')->orderBy('match_datetime', 'ASC')->get();
         }else{                                      //jesen
-            $matchs[0] = Match::where('team_id', $request->input('team1'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->get();
-            $matchs[1] = Match::where('team_id', $request->input('team2'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->get();
-            $matchs[2] = Match::where('team_id', $request->input('team3'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->get();
-            $matchs[3] = Match::where('team_id', $request->input('team4'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->get();
+            $matchs[0] = Match::where('team_id', $request->input('team1'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->orderBy('match_datetime', 'ASC')->get();
+            $matchs[1] = Match::where('team_id', $request->input('team2'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->orderBy('match_datetime', 'ASC')->get();
+            $matchs[2] = Match::where('team_id', $request->input('team3'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->orderBy('match_datetime', 'ASC')->get();
+            $matchs[3] = Match::where('team_id', $request->input('team4'))->where('season_id', $season->id)->where('match_datetime', '>=', $years[0].'-07-21')->where('match_datetime', '<=', $years[0].'-12-31')->orderBy('match_datetime', 'ASC')->get();
         }
         
         $teams[0] = Team::where('id', $request->input('team1'))->first();
