@@ -57,7 +57,7 @@
 {{ ($matchs->count()==0) ? '<span style="color:red">Zatiaľ nie sú pridané žiadne zápasy.</span>' : '' }}
 <hr>
 <h4>Súhrn:</h4>
-<span>Počet zápasov: <strong>{{ $matches->count() }}</strong></span>
+<span>Počet zápasov: <strong>{{ $matchs->count() }}</strong></span>
 
 
 <script type="application/javascript">
