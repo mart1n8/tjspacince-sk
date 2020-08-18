@@ -42,12 +42,15 @@
           PRÍRAVKA
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ route('matchs.index', ['team_slug'=>'pripravka-u12']) }}">ZÁPASY U12</a>
-            <a class="dropdown-item" href="{{ route('tables.show', ['team_slug'=>'pripravka-u12']) }}">TABUĽKA U12</a>
+            <a class="dropdown-item" href="{{ route('matchs.index', ['team_slug'=>'pripravka-u13']) }}">ZÁPASY U13</a>
+            <a class="dropdown-item" href="{{ route('tables.show', ['team_slug'=>'pripravka-u13']) }}">TABUĽKA U13</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{{ route('matchs.index', ['team_slug'=>'pripravka-u11']) }}">ZÁPASY U11</a>
+            <a class="dropdown-item" href="{{ route('tables.show', ['team_slug'=>'pripravka-u11']) }}">TABUĽKA U11</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('matchs.index', ['team_slug'=>'pripravka-u09']) }}">ZÁPASY U9</a>
             <a class="dropdown-item" href="{{ route('tables.show', ['team_slug'=>'pripravka-u09']) }}">TABUĽKA U9</a>
-          </div>
+        </div>
       </li>
       <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
