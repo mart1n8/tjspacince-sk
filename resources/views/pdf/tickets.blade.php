@@ -79,7 +79,7 @@ for ($s = 1; $s <= $pages; $s++) {
                     <td class="lokno"><?= $k+($i*5) ?></td>
                     <td class="pokno">
                     <p class="info1"><?= $sutaz ?> - <?= $round.'. kolo' ?> | <?= date("d.m.Y", strtotime($match->match_datetime))?><?= ($type==1) ? ' | dôchodcovský lístok' : ''?></p>
-                    <p class="zapas"><?= $match->getShortMatch() ?></p>
+                    <p class="zapas"><?= $match->shortMatch ?></p>
                     <p class="info2" style="padding-left:50px">Číslo lístka: <span class="hrube"><?= $k+($i*5) ?></span><span style="position:relative; margin-left: 230px;">Cena: <span class="hrube"><?= $price;?> &euro;</span></span></p>
                     </td>
 		</tr>

@@ -21,12 +21,12 @@
   <meta charset="utf-8">
   <title>TJ Družstevník Špačince - rozlosovanie</title>
        <style>
-					body {
-							font-family: DejaVu Sans, sans-serif;
-                font-size: <?=$font_size?>px;
-                width: 100%;
-                margin: 0 auto;
-							}     
+        body {
+            font-family: DejaVu Sans, sans-serif;
+            font-size: <?=$font_size?>px;
+            width: 100%;
+            margin: 0 auto;
+        }     
         table{
             border-collapse: collapse;
 						margin:0;
