@@ -50,7 +50,7 @@ class PDFController extends Controller
        $round = Match::where('team_id', 1)->where('result', '<>', '')->where('season_id', $season->id)->where('match_datetime', '<=', Date("Y-m-d"))->count()+1;
        $price = ($type==0) ? "1" : "0,50";
        $count = !empty($count) ? $count : 50;
-       $sutaz = "V.liga Západ";
+       $sutaz = "VIII. liga SELECT";
        
     //VYTVORENIE PDF
 	ini_set('memory_limit', '-1');
