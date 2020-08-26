@@ -146,7 +146,8 @@
                 <span class="invalid-feedback">
                 <strong>{{ $errors->first('short_info') }}</strong>
                 </span>
-            @endif        
+            @endif
+            <label for="cron_lock" class="font-weight-bold"><input type="checkbox" name="cron_lock" id="cron_lock" {{ $match->cron_lock==1 ? "checked" : "" }}> zablokovať zápas z cron úpravy dátumu a času zápasu</label><br/>
         </div>
     </div>
 </div>

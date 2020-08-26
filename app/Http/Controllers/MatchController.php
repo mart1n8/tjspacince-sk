@@ -99,6 +99,7 @@ class MatchController extends Controller
         $match->slug = Str::slug($match->team->name.' '.date("dmY-", strtotime($match->match_datetime)).' '.$match->shortMatch);
         $match->result = !empty($match->result) ? $match->result : "";
         $match->locked = $match->locked=="on" ? 1 : 0;
+        $match->cron_lock = $match->cron_lock=="on" ? 1 : 0;
     
         $match->save();
         return redirect()->route('matchs.edit', ['match_id'=>$match->id])->with('succeed', 'Zápas bol upravený.');               

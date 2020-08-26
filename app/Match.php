@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Match extends Model
 {
     
-    protected $fillable=['team_id', 'season_id', 'club_id', 'match_datetime', 'is_bus', 'bus_time', 'result', '	short_info', 'about', 'home_away', 'fn_ID', 'locked', 'locked_reason'];
+    protected $fillable=['team_id', 'season_id', 'club_id', 'match_datetime', 'is_bus', 'bus_time', 'result', '	short_info', 'about', 'home_away', 'fn_ID', 'locked', 'locked_reason', 'cron_lock'];
     protected $appends = ['matchDateString', 'shortDate', 'shortMatch', 'resultColor'];
     
     public function club(){
