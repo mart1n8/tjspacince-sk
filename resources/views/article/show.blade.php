@@ -11,6 +11,7 @@
 <article>
 <h1>{{ $article->title }}</h1>
     {!! $article->text !!}
+    <br clear="all">
     <p style="text-align: right; margin: 20px 10px 0px 0px; font-style: italic">
         <span>vložil: {{ $article->user()->name }}</span>
         <span> | </span>

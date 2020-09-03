@@ -53,7 +53,7 @@ class CronController extends Controller
             Mail::send('email.plagat.info', compact('matchs', 'needTickets'), function ($message) {
 									$message->subject('Futbal - plagát');
 									$message->from('web@tjspacince.sk', 'tjspacince.sk');
-									$message->to('starosta@spacince.sk')->to('jan.pinkas@spacince.sk')->to('webmaster@spacince.sk')->bcc('martin.puchly@gmail.com');
+									$message->to('starosta@spacince.sk')->to('jan.pinkas@spacince.sk')->to('webmaster@spacince.sk')>to('podatelna@spacince.sk')->bcc('martin.puchly@gmail.com');
             });
             return "OK!";
             //return view('email.plagat.info', compact('matchs'));
