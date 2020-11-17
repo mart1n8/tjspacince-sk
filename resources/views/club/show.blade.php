@@ -41,34 +41,6 @@
 
   </div>
 </div>
-
-@if(!empty($club->arena_gps))
-<br/><br/>
-<div class="row">
-  <?php $coordinates = explode(",", $club->arena_gps) ?> @if(!empty($club->arena_gps) && !empty($coordinates[1]))
-  <div class="col-6">
-    <h3>Štadión:</h3>
-      <div id="map" style="width:350px; height:350px;"></div>
-  </div>
-  <script>
-    function initMap() {
-      var uluru = {
-        lat: <?= $coordinates[0] ?>,
-        lng: <?= $coordinates[1] ?>
-      };
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: uluru
-      });
-      var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-      });
-    }
-  </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOnYlzsZ-1Mtl4ZpKs2iRENf4ZU_bylFY&callback=initMap">
-  </script>
-  @endif
   @if(!empty($club->about))
   <div class="col-6">
     <h3>O klube:</h3>
